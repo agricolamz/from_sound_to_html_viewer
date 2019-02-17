@@ -13,18 +13,23 @@ editor_options:
 <img id="expandedImg" style="position: fixed; top: 0; left: 900px; width:50%">
 
 ```{r, echo=FALSE, message=FALSE}
-# setwd("/home/agricolamz/work/scripts/praat/extract_sound_and_picture")
+# put here path to your picture folder
+picture_folder <- "./picture/"
+# put here path to your sound folder
+sound_folder <- "./sound/"
+
 library(tidyverse)
-files <- list.files("./picture/")
+files <- list.files(picture_folder)
 files <- str_replace_all(files, ".png$", "")
 data_frame(files) %>%
   rowwise() %>% 
   mutate(sound_files = unlist(str_split(files, "_"))[1],
          tier = unlist(str_split(files, "_"))[2],
          label = unlist(str_split(files, "_"))[3],
-         audio = paste0('<audio controls> <source src="sound/',
-                        files, '.wav" type="audio/wav"></audio>'),
-         pictures = paste0('<img src="picture/', files, '.png" style="width:10%" onclick="myFunction(this);">')) %>% 
+         audio = paste0('<audio controls> <source src="', 
+                        sound_folder, files, '.wav" type="audio/wav"></audio>'),
+         pictures = paste0('<img src="', 
+                           picture_folder, files, '.png" style="width:10%" onclick="myFunction(this);">')) %>% 
   select(-files) %>% 
   DT::datatable(filter = 'top', rownames = FALSE, options = list(pageLength = 50, dom = 'tip'), escape = FALSE)
 ```
