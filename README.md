@@ -6,4 +6,4 @@ This repositery is an example of how to create html Viewer from annotated file.
 * run [Rmd script](https://raw.githubusercontent.com/agricolamz/from_sound_to_html_viewer/master/create_html.Rmd), changing 17th and 19th line of the script to correct path
 * open obtained .html file
 
-The example files could be found in a repository folders `source`,  `sound` and `picture`
+The example files could be found in a repository folders `source`,  `sound` and `picture`. The obtained html example could be found [here](https://agricolamz.github.io/from_sound_to_html_viewer/create_html.html).
