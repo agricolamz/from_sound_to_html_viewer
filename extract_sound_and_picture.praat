@@ -1,5 +1,6 @@
 # This script is distributed under the GNU General Public License.
 # George Moroz 17.02.2019
+# The last vertion of this script is here: https://raw.githubusercontent.com/agricolamz/from_sound_to_html_viewer/master/extract_sound_and_picture.praat
 
 form Get spectrum and oscilogram from 
   comment Where should the script write a result sound files?
@@ -7,7 +8,7 @@ form Get spectrum and oscilogram from
   comment Where should the script write a result picture files?
   text directory_picture /home/.../
   comment What is the maximum formant value (Hz)?
-  integer max_formant 5000
+  text max_formant 5000
 endform
 
 n = numberOfSelected()
