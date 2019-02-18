@@ -6,6 +6,8 @@ form Get spectrum and oscilogram from
   text directory_sound /home/.../
   comment Where should the script write a result picture files?
   text directory_picture /home/.../
+  comment What is the maximum formant value (Hz)?
+  integer max_formant 5000
 endform
 
 n = numberOfSelected()
@@ -37,7 +39,7 @@ procedure plot_and_extract directory_s$, directory_p$, tier_number
 	for j to n
 		plusObject: files[j]
 	endfor
-	Extract non-empty intervals: tier_number, "no"
+	Extract non-empty intervals: tier_number, "yes"
 	for b to number_of_intervals
 		extracted[b] = selected("Sound", b)
 	endfor
@@ -45,7 +47,7 @@ procedure plot_and_extract directory_s$, directory_p$, tier_number
         id$ = string$ (id)
 		selectObject: extracted[id]
 		Save as WAV file: directory_s$ + object_name$ + "_" + name_of_tier$ + "_" + labels$[id] + "_" + id$ + ".wav"
-		To Spectrogram: 0.005, 5000, 0.002, 20, "Gaussian"
+		To Spectrogram: 0.005, max_formant, 0.002, 2, 20, "Gaussian"
 		Select outer viewport: 0, 10, 3, 10
 		Paint: 0, 0, 0, 0, 100, "yes", 50, 6, 0, "yes"
 		Remove
