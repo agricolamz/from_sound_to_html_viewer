@@ -43,7 +43,7 @@ procedure plot_and_extract directory_s$, directory_p$, tier_number
 	endfor
 	for id to number_of_intervals
 		selectObject: extracted[id]
-		Save as WAV file: directory_s$ + object_name$ + "_" + name_of_tier$ + "_" + labels$[id] + ".wav"
+		Save as WAV file: directory_s$ + object_name$ + "_" + name_of_tier$ + "_" + labels$[id] + "_" + id + ".wav"
 		To Spectrogram: 0.005, 5000, 0.002, 20, "Gaussian"
 		Select outer viewport: 0, 10, 3, 10
 		Paint: 0, 0, 0, 0, 100, "yes", 50, 6, 0, "yes"
@@ -53,7 +53,7 @@ procedure plot_and_extract directory_s$, directory_p$, tier_number
 		Draw: 0, 0, 0, 0, "yes", "Curve"
 		Select outer viewport: 0, 10, 0, 10
 		Text top: "yes", object_name$ + " " + name_of_tier$ + " " + labels$[id]
-		Save as 300-dpi PNG file: directory_p$ + object_name$ + "_" + name_of_tier$ + "_" + labels$[id]+".png"
+		Save as 300-dpi PNG file: directory_p$ + object_name$ + "_" + name_of_tier$ + "_" + labels$[id]+ "_" + id + ".png"
 		Erase all
 		Remove
 	endfor
