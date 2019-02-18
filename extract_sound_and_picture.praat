@@ -3,9 +3,9 @@
 
 form Get spectrum and oscilogram from 
   comment Where should the script write a result sound files?
-  text directory_sound /home/agricolamz/work/scripts/praat/extract_sound_and_picture/sound/
+  text directory_sound /home/.../
   comment Where should the script write a result picture files?
-  text directory_picture /home/agricolamz/work/scripts/praat/extract_sound_and_picture/picture/
+  text directory_picture /home/.../
 endform
 
 n = numberOfSelected()
