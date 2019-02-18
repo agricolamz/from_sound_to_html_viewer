@@ -48,7 +48,7 @@ procedure plot_and_extract directory_s$, directory_p$, tier_number
         id$ = string$ (id)
 		selectObject: extracted[id]
 		Save as WAV file: directory_s$ + object_name$ + "_" + name_of_tier$ + "_" + labels$[id] + "_" + id$ + ".wav"
-		To Spectrogram: 0.005, max_formant, 0.002, 2, 20, "Gaussian"
+		To Spectrogram: 0.005, max_formant, 0.002, 20, "Gaussian"
 		Select outer viewport: 0, 10, 3, 10
 		Paint: 0, 0, 0, 0, 100, "yes", 50, 6, 0, "yes"
 		Remove
