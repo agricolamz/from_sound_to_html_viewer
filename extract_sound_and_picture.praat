@@ -4,10 +4,10 @@
 
 form Get spectrum and oscilogram from 
   comment Where should the script write a result sound files?
-  comment (don't forget the final slash; Windows users please change your the final backslashes to slashes)
+  comment don't forget the final slash; on Windows change your backslashes to slashes
   text directory_sound /home/.../
   comment Where should the script write a result picture files?
-  comment (don't forget the final slash; Windows users please change your the final backslashes to slashes)
+  comment don't forget the final slash; on Windows change your backslashes to slashes
   text directory_picture /home/.../
   comment What is the maximum formant value for your pictures (Hz)?
   text max_formant 5000
