@@ -10,8 +10,9 @@ form Get spectrum and oscilogram from
   comment don't forget the final slash; on Windows change your backslashes to slashes
   text directory_picture /home/.../
   comment What is the maximum formant value for your pictures (Hz)?
-  text max_frequency 5000
-  text dynamic_range 50
+  positive max_frequency 5000
+  comment What is the dynamic range value for your pictures (Db)?
+  positive dynamic_range 50
 endform
 
 n = numberOfSelected()
