@@ -18,17 +18,31 @@ picture_folder <- "./picture/"
 # put here path to your sound folder
 sound_folder <- "./sound/"
 
-library(tidyverse)
-files <- list.files(picture_folder)
+if(!require(tidyverse)){
+    install.packages("tidyverse")
+    library(tidyverse)
+}
+
+if(!require(DT)){
+    install.packages("DT")
+}
+
+if(!require(fs)){
+    install.packages("fs")
+}
+
+files <- fs::dir_ls(picture_folder)
 files <- str_replace_all(files, ".png$", "")
 tibble(files) %>%
   rowwise() %>%
   mutate(sound_files = nth(unlist(str_split(files, "_")), -4),
          tier = nth(unlist(str_split(files, "_")), -3),
          label = paste0(nth(unlist(str_split(files, "_")), -2), nth(unlist(str_split(files, "_")), -1)),
-         audio = paste0('<audio controls> <source src="',
+         audio = paste0('<audio controls> <source src="', 
+                        if(Sys.info()[1] == "Windows") "file:///",
                         sound_folder, files, '.wav" type="audio/wav"></audio>'),
-         pictures = paste0('<img src="',
+         pictures = paste0('<img src="', 
+                           if(Sys.info()[1] == "Windows") "file:///",
                            picture_folder, files, '.png" style="width:10%" onclick="myFunction(this);">')) %>%
   select(-files) %>%
   DT::datatable(filter = 'top', rownames = FALSE, options = list(pageLength = 50, dom = 'tip'), escape = FALSE)
