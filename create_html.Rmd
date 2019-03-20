@@ -12,10 +12,10 @@ editor_options:
 
 <img id="expandedImg" style="position: fixed; top: 0; left: 900px; width:50%">
 
-```{r, echo=FALSE, message=FALSE}
-# put here path to your picture folder
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# put here the whole path to your picture folder
 picture_folder <- "./picture/"
-# put here path to your sound folder
+# put here the whole path to your sound folder
 sound_folder <- "./sound/"
 
 if(!require(tidyverse)){
@@ -32,6 +32,7 @@ if(!require(fs)){
 }
 
 files <- fs::dir_ls(picture_folder)
+files <- str_replace_all(files, picture_folder, "")
 files <- str_replace_all(files, ".png$", "")
 tibble(files) %>%
   rowwise() %>%
@@ -56,10 +57,5 @@ function myFunction(imgs) {
   imgText.innerHTML = imgs.alt;
   expandImg.parentElement.style.display = "block";
 }
-
-   $(document).ready(function() {
-     $head = $('#header');
-     $head.prepend('<img src=\"logo.jpg\" style=\"float: le;width: 150px;\"/>')
-   });
 </script>
 
