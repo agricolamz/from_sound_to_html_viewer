@@ -60,7 +60,7 @@ procedure plot_and_extract directory_s$, directory_p$, tier_number
 		Select outer viewport: 0, 10, 0, 3.5
 		Draw: 0, 0, 0, 0, "yes", "Curve"
 		Select outer viewport: 0, 10, 0, 10
-		Text top: "yes", object_name$ + " " + name_of_tier$ + " " + labels$[id]
+		Text top: "yes", object_name$ + " " + name_of_tier$ + " " + labels$[id]+"_" + id$
 		Save as 300-dpi PNG file: directory_p$ + object_name$ + "_" + name_of_tier$ + "_" + labels$[id]+ "_" + id$ + ".png"
 		Erase all
 		Remove
