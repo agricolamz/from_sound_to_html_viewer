@@ -55,10 +55,12 @@ procedure plot_and_extract directory_s$, directory_p$, tier_number
 		To Spectrogram: 0.005, max_frequency, 0.002, 20, "Gaussian"
 		Select outer viewport: 0, 10, 3, 10
 		Paint: 0, 0, 0, 0, 100, "yes", dynamic_range, 6, 0, "yes"
+		Marks left: 6, "yes", "yes", "yes"
 		Remove
 		selectObject: extracted[id]
 		Select outer viewport: 0, 10, 0, 3.5
 		Draw: 0, 0, 0, 0, "yes", "Curve"
+		Marks bottom: 6, "yes", "yes", "yes"
 		Select outer viewport: 0, 10, 0, 10
 		Text top: "yes", object_name$ + " " + name_of_tier$ + " " + labels$[id]+"_" + id$
 		Save as 300-dpi PNG file: directory_p$ + object_name$ + "_" + name_of_tier$ + "_" + labels$[id]+ "_" + id$ + ".png"
