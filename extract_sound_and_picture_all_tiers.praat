@@ -1,6 +1,6 @@
 # This script is distributed under the GNU General Public License.
 # George Moroz 01.03.2019
-# The last vertion of this script is here: https://raw.githubusercontent.com/agricolamz/from_sound_to_html_viewer/master/extract_sound_and_picture.praat
+# The last vertion of this script is here: https://raw.githubusercontent.com/agricolamz/from_sound_to_html_viewer/master/extract_sound_and_picture_all_tiers.praat
 
 form Get spectrum and oscilogram from 
   comment Where should the script write a result sound files?
